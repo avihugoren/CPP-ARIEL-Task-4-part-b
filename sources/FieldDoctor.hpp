@@ -12,6 +12,7 @@ class FieldDoctor : public Player
           FieldDoctor(Board& board, City city) : Player(board, city){}
           ~FieldDoctor() {}
           std::string role() ;
+          //FieldDoctor specialty//
           FieldDoctor& treat(City city);
  };
  }

@@ -11,7 +11,10 @@ class Virologist : public Player
    public:
         Virologist(Board& board, City city) : Player(board, city) {};
         ~Virologist() {};
+
         std::string role(){return "Virologist";}
+        
+        //Virologist specialty
         Virologist& treat(City c);
  };
 }

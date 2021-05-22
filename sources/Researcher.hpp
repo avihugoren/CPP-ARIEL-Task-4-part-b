@@ -12,6 +12,7 @@ class Researcher : public Player
     Researcher(Board& board, City city) : Player(board, city) {};
     ~Researcher() {};
      std::string role(){return "Researcher";}
+    //Researcher specialty//
     Researcher& discover_cure(Color c);
  };
 }

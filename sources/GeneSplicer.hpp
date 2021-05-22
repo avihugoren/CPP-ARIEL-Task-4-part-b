@@ -12,6 +12,7 @@ class GeneSplicer : public Player
         GeneSplicer(Board &board, City city) : Player(board, city) {}
         ~GeneSplicer() {}
         std::string role(){return "GeneSplicer";}
+        //GeneSplicer specialty
         GeneSplicer & discover_cure(Color c);
  };
 }

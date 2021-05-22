@@ -14,6 +14,7 @@ class Scientist : public Player
     Scientist(Board& board, City city,int num);
     ~Scientist() {};
     std::string role(){return "Scientist";}
+    //Scientist specialty
     Scientist& discover_cure(Color color);
  };
 }

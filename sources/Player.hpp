@@ -9,16 +9,14 @@ class Player
 {
     protected:
         Board& my_board;
-        CityObj& curr_city;
         City my_city;
         const std::string player_role;
         set<City> cards;
         std::string name;
-        
-    public:
-        // Player(); 
-        ~Player(){}
         Player(Board& b,City c);
+        ~Player(){}
+        
+    public: 
         Player & take_card( City c);
         void remove_cards(){this->cards.clear();}
         virtual Player & discover_cure( Color c);

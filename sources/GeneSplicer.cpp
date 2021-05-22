@@ -7,6 +7,7 @@ GeneSplicer & GeneSplicer::discover_cure(Color c)
     {
         throw std::invalid_argument("there is no station on this city\n");
     }
+    //Checks if there is already a cure//
     if (this->my_board.cures.find(c)!= this->my_board.cures.end())
     {
         return *this;
@@ -14,13 +15,14 @@ GeneSplicer & GeneSplicer::discover_cure(Color c)
     set<City> temp_set;
     for (auto elem : this->cards)
     {
-        CityObj temp = this->my_board.Trasform_enum_to_CityObj(elem);
         temp_set.insert(elem);
+        //If there is enough cards//
         if (temp_set.size() == number_for_cure)
         {
             break;
         }
-    }     
+    }  
+    //If there is enough cards//
     if(temp_set.size() == number_for_cure)
     {
         for (auto elem : temp_set)
@@ -30,6 +32,7 @@ GeneSplicer & GeneSplicer::discover_cure(Color c)
         this->my_board.cures.insert(c);
         return *this;;
     }
+    //There wasnt enough cards//
     throw std::invalid_argument("not enough cards \n");  
     return *this;
     }

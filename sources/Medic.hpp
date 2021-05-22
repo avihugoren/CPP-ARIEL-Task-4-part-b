@@ -12,6 +12,7 @@ class Medic : public Player
       Medic(Board &board, City city) : Player(board, city) {};
       ~Medic() {};
       std::string role(){return "Medic";}
+      //Medic special skills// 
       Medic& treat(City city);
       Medic& drive( City c);
       Medic& fly_direct(City c);

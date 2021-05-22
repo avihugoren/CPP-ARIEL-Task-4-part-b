@@ -12,6 +12,7 @@ class OperationsExpert : public Player
         OperationsExpert(Board &board, City city) : Player(board, city) {};
         ~OperationsExpert() {};
         std::string role(){return "OperationsExpert";}
+        //OperationsExpert specialty//
         OperationsExpert& build ();
  };
 }

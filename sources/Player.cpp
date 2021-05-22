@@ -1,6 +1,9 @@
 #include "Player.hpp"
  namespace pandemic{
-        Player::Player(Board& b, City c):my_board(b),my_city(c){}
+        Player::Player(Board& b, City c):my_board(b),my_city(c)
+        {
+        //  this->my_board.players.push_back(this);
+        }
 
         Player & Player::take_card( City c)
         {   

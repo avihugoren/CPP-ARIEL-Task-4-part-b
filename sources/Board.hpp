@@ -6,7 +6,9 @@
 #include <string>
 #include <set>
 #include <map>
+#include <vector>
 #include "Color.hpp"
+// #include "Player.hpp"
 #include "CityObj.hpp"
 using namespace std;
 
@@ -26,6 +28,7 @@ namespace pandemic
             map<City,set<City>>neighbors;
             map<City,CityObj> cities;
             set<Color> cures;
+            
             //maps to trasform string to enums//
             inline static map <std::string,City>trasform_map;
             inline static map <std::string,Color>Color_trasform_map;

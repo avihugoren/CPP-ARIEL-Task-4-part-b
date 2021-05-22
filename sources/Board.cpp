@@ -89,9 +89,85 @@ using namespace pandemic;
             }
             return (this->cities[city_name]);
         }
-         ostream& pandemic::operator<<(ostream& output, const Board& b)
+         ostream& pandemic::operator<<(ostream& output, const Board& board)
         {
-            return output;
+                map<City,string> trasform_City_to_string;
+                map<Color,string> trasform_Color_to_string;
+                trasform_City_to_string[City::Atlanta]="Atlanta";
+                trasform_City_to_string[City::Baghdad]="Baghdad";
+                trasform_City_to_string[City::Bangkok]="Bangkok";
+                trasform_City_to_string[City::Beijing]="Beijing";
+                trasform_City_to_string[City::Bogota]="Bogota";
+                trasform_City_to_string[City::BuenosAires]="BuenosAires";
+                trasform_City_to_string[City::Chennai]="Chennai";
+                trasform_City_to_string[City::Cairo]="Cairo";
+                trasform_City_to_string[City::Delhi]="Delhi";
+                trasform_City_to_string[City::Essen]="Essen";
+                trasform_City_to_string[City::HongKong]="HongKong";
+                trasform_City_to_string[City::Istanbul]="Istanbul";
+                trasform_City_to_string[City::Algiers]="Algiers";
+                trasform_City_to_string[City::Jakarta]="Jakarta";
+                trasform_City_to_string[City::Johannesburg]="Johannesburg";
+                trasform_City_to_string[City::Karachi]="Karachi";
+                trasform_City_to_string[City::Khartoum]="Khartoum";
+                trasform_City_to_string[City::Kinshasa]="Kinshasa";
+                trasform_City_to_string[City::Kolkata]="Kolkata";
+                trasform_City_to_string[City::Lagos]="Lagos";
+                trasform_City_to_string[City::Lima]="Lima";
+                trasform_City_to_string[City::London]="London";
+                trasform_City_to_string[City::LosAngeles]="LosAngeles";
+                trasform_City_to_string[City::Madrid]="Madrid";
+                trasform_City_to_string[City::Chicago]="Chicago";
+                trasform_City_to_string[City::Manila]="Manila";
+                trasform_City_to_string[City::Washington]="Washington";
+                trasform_City_to_string[City::MexicoCity]="MexicoCity";
+                trasform_City_to_string[City::HoChiMinhCity]="HoChiMinhCity";
+                trasform_City_to_string[City::Miami]="Miami";
+                trasform_City_to_string[City::Milan]="Milan";
+                trasform_City_to_string[City::Montreal]="Montreal";
+                trasform_City_to_string[City::Moscow]="Moscow";
+                trasform_City_to_string[City::Mumbai]="Mumbai";
+                trasform_City_to_string[City::NewYork]="NewYork";
+                trasform_City_to_string[City::Shanghai]="Shanghai";
+                trasform_City_to_string[City::Osaka]="Osaka";
+                trasform_City_to_string[City::Paris]="Paris";
+                trasform_City_to_string[City::Riyadh]="Riyadh";
+                trasform_City_to_string[City::SanFrancisco]="SanFrancisco";
+                trasform_City_to_string[City::Santiago]="Santiago";
+                trasform_City_to_string[City::SaoPaulo]="SaoPaulo";
+                trasform_City_to_string[City::Seoul]="Seoul";
+                trasform_City_to_string[City::StPetersburg]="StPetersburg";
+                trasform_City_to_string[City::Sydney]="Sydney";
+                trasform_City_to_string[City::Taipei]="Taipei";
+                trasform_City_to_string[City::Tehran]="Tehran";
+                trasform_City_to_string[City::Tokyo]="Tokyo";
+                trasform_Color_to_string[Color::Red]="Red";
+                trasform_Color_to_string[Color::Black]="Black";
+                trasform_Color_to_string[Color::Blue]="Blue";
+                trasform_Color_to_string[Color::Yellow]="Yellow";
+                set<string>stations;
+            for ( const auto &p : board.cities ) 
+            {
+                CityObj temp = p.second;
+                output<<trasform_City_to_string.at(p.first)<<" disease lvl:"<<temp.disease_lvl()<<endl;
+                if (temp.station)
+                {
+                   stations.insert(trasform_City_to_string.at(p.first));
+                }
+            }
+            output <<"Stations: ";
+            for ( const auto &p : stations) 
+            {
+              cout<<p<<" ";
+            }
+            cout<<endl;
+            output << "Cures:";
+            for ( const auto &p : board.cures) 
+            {
+                output << trasform_Color_to_string.at(p)<<" ";
+            }
+            output<<endl;
+                return output;
         }
        
         

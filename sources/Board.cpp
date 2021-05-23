@@ -30,9 +30,9 @@ using namespace pandemic;
                 City_color_enum = this->Trasform_string_to_Color(City_color_string);
                 //build new CityObj with color enum and city enum//
                 CityObj temp_city(City_color_enum,Trasform_string_to_enum(City_name));
-                //set the will hold all the neighbors
+                //set the will hold all the neighbors//
                 set<City>my_neighbors;
-                //while that add all the negihbors
+                //while that add all the negihbors//
                 while (ss >> negihbor)
                 {
                     
@@ -149,7 +149,8 @@ using namespace pandemic;
             for ( const auto &p : board.cities ) 
             {
                 CityObj temp = p.second;
-                output<<trasform_City_to_string.at(p.first)<<" disease lvl:"<<temp.disease_lvl()<<endl;
+                //pring city name and disease lvl//
+                output<<trasform_City_to_string.at(p.first)<<" disease level:"<<temp.disease_lvl()<<endl;
                 if (temp.station)
                 {
                    stations.insert(trasform_City_to_string.at(p.first));

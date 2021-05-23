@@ -1,6 +1,6 @@
 
 #include "Virologist.hpp"
-using namespace pandemic;
+ namespace pandemic{
 Virologist& Virologist :: treat(City c)
 {
     // diseese lvl is 0//
@@ -14,7 +14,7 @@ Virologist& Virologist :: treat(City c)
         throw std::invalid_argument("try to treat but dont have card \n");
     }
     // checks if there alredy a cure for this disease//
-    if(this->my_board.cures.find(this->my_board.Trasform_enum_to_CityObj(this->my_city).color) != this->my_board.cures.end())
+    if(this->my_board.cures.find(this->my_board.Trasform_enum_to_CityObj(c).color) != this->my_board.cures.end())
     {
         this->my_board[c]=0;
         return *this;
@@ -23,5 +23,5 @@ Virologist& Virologist :: treat(City c)
        this->my_board[c]-=1;
         return *this;
              
-
+}
 }
